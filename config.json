@@ -1,0 +1,13 @@
+{	
+	"prefix": "multi", 
+	"defaultSessionName": "bot", 
+	"zeksKey": "3k95xMizHeMDc565zlqM5X6uqTP",
+	"autoRead": true,
+	"self": false, 
+	"maxLimit": 30,
+	"ownerList": ["6282126688740@s.whatsapp.net", "6282882009996111@s.whatsapp.net"],
+	"apiUrl": "https://api.zeks.me",
+    "imgUrl": "https://i.postimg.cc/5t5c4rwd/483fd01239cb48c5d997be1cbed9cc9f.jpg",
+	"pack": "AsunaBot",
+	"author": "wa.me/6281283423921"
+}
