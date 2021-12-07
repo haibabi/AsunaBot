@@ -880,7 +880,7 @@ module.exports = handle = (client, Client) => {
                            contentText: menu(data.prefix, data.pushname),
                            footerText: 'AsunaBot',
                                 "contextInfo": {
-									  mentionedJid: [configs.ownerList[0]],
+									  mentionedJid: sender,
                                       participant: sender,
                                       stanzaId: message.key.id,
                                       quotedMessage: message.message,
@@ -890,13 +890,6 @@ module.exports = handle = (client, Client) => {
                                        buttonId: `${data.prefix}info`,
                                        buttonText: {
                                           displayText: "📒 𝐈𝐍𝐅𝐎"
-                                        },
-                                         "type": "RESPONSE"
-                                     },
-                                     {
-                                       buttonId: `${data.prefix}owner`,
-                                       buttonText: {
-                                          displayText: "🪀 𝐎𝐖𝐍𝐄𝐑"
                                         },
                                          "type": "RESPONSE"
                                      },
