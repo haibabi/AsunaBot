@@ -880,7 +880,6 @@ module.exports = handle = (client, Client) => {
                            contentText: menu(data.prefix, data.pushname),
                            footerText: 'AsunaBot',
                                 "contextInfo": {
-									  mentionedJid: sender,
                                       participant: sender,
                                       stanzaId: message.key.id,
                                       quotedMessage: message.message,
