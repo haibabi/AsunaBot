@@ -859,20 +859,6 @@ module.exports = handle = (client, Client) => {
                 t
             } = data
             switch(command.toLowerCase()) {
-case 'prob':
-if(data.body === " ") data.reply("Kirim perintah !prob P x n Q")
-var angka = data.body.split(' ') 
-try { const Math = require('mathjs')
-function prob (P, x, n, Q) {
-  const hasil = Math.evaluate(`${n}!/${x}!/${n-x}!*${P}^${x}*${Q}^${n-x}`)
-  const txt = `P(X = ${x} = b(${x}, ${n}, ${P} = ${n}*C*${x} ${P}^${x} ${Q}^${n-x}))\n${n}!/${x}!${n-x} (${P})^${x} (${Q})^${n-x} = ${hasil}`
-  return txt
-}
-} catch(e){
-Client.sendText(from,e)
-}
-Client.sendText(from, prob(angka[0],angka[1], angka[2], angka[3]))
-break
 				case 'self':
 					if (!isOwner) return data.reply(mess.ownerOnly)
 					if (Client.self) return data.reply('Already Self Mode')
@@ -971,6 +957,20 @@ break
                     const buff = await client.downloadMediaMessage(JSON.parse(JSON.stringify(data.message).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo)
                     Client.sendWebpAsSticker(data.from, buff.toString('base64'), data.message, {pack: `${text[0]}`, author: `${text[1]}`, emojis: data.body.match(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g)})
                     break
+case 'prob':
+if(data.body === "") data.reply('Kirim perintah !prob P x n Q')
+var angka = data.body.split(' ') 
+try { 
+function prob (P, x, n, Q) {
+  const hasil = Math.evaluate(`${n}!/${x}!/${n-x}!*${P}^${x}*${Q}^${n-x}`)
+  const txt = `P(X = ${x} = b(${x}, ${n}, ${P} = ${n}*C*${x} ${P}^${x} ${Q}^${n-x}))\n${n}!/${x}!${n-x} (${P})^${x} (${Q})^${n-x} = ${hasil}`
+  return txt
+}
+} catch(e){
+data.reply(e)
+}
+Client.sendText(from, prob(angka[0],angka[1], angka[2], angka[3]))
+break
                 case 'stikerfire':
                 case 'stickerfire':
                 case 'sfire':
