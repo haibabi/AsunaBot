@@ -958,7 +958,7 @@ module.exports = handle = (client, Client) => {
                     Client.sendWebpAsSticker(data.from, buff.toString('base64'), data.message, {pack: `${text[0]}`, author: `${text[1]}`, emojis: data.body.match(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g)})
                     break
 case 'prob':
-if(data.body === "") data.reply('Kirim perintah !prob P x n Q')
+if(data.body === "") return data.reply('Kirim perintah !prob P x n Q')
 var angka = data.body.split(' ') 
 try { 
 function prob (P, x, n, Q) {
