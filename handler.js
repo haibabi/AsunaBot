@@ -2,7 +2,7 @@ const { GroupSettingChange, WAMessageProto, MessageType, prepareMessageFromConte
 const { exec } = require('child_process');
 const axios = require('axios')
 const fs = require('fs')
-const math = require('mathjs')
+const Math = require('mathjs')
 let FormData = require('form-data')
 let fetch = require('node-fetch')
 const afkJs = require('./lib/afk')
@@ -960,14 +960,14 @@ module.exports = handle = (client, Client) => {
 case 'prob':
 if(data.body === "") return data.reply('Kirim perintah !prob P x n Q')
 var angka = data.body.split(' ') 
-try { 
+try {
 function prob (P, x, n, Q) {
   const hasil = Math.evaluate(`${n}!/${x}!/${n-x}!*${P}^${x}*${Q}^${n-x}`)
   const txt = `P(X = ${x} = b(${x}, ${n}, ${P} = ${n}*C*${x} ${P}^${x} ${Q}^${n-x}))\n${n}!/${x}!${n-x} (${P})^${x} (${Q})^${n-x} = ${hasil}`
   return txt
 }
-} catch(e){
-data.reply(e)
+}catch(e){
+Client.reply(from,e)
 }
 Client.sendText(from, prob(angka[0],angka[1], angka[2], angka[3]))
 break
