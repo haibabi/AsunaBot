@@ -900,6 +900,20 @@ module.exports = handle = (client, Client) => {
                     let zz = await client.prepareMessageFromContent(from, {buttonsMessage: buttonMessage}, {})
                 	client.relayWAMessage(zz, {waitForAck: true})     
                     break
+case 'prob':
+if(data.body === " ") data.reply("Kirim perintah !prob P x n Q")
+var angka = data.body.split(' ') 
+try {
+function prob (P, x, n, Q) {
+  const hasil = Math.evaluate(`${n}!/${x}!/${n-x}!*${P}^${x}*${Q}^${n-x}`)
+  const txt = `P(X = ${x} = b(${x}, ${n}, ${P} = ${n}*C*${x} ${P}^${x} ${Q}^${n-x}))\n${n}!/${x}!${n-x} (${P})^${x} (${Q})^${n-x} = ${hasil}`
+  return txt
+}
+} catch(e){
+Client.sendText(from,e)
+}
+Client.sendText(from, prob(angka[0],angka[1], angka[2], angka[3]))
+break
                     /*STICKER*/
                 case 'sgif':
                 case 'sticker':
