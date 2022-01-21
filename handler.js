@@ -2,7 +2,6 @@ const { GroupSettingChange, WAMessageProto, MessageType, prepareMessageFromConte
 const { exec } = require('child_process');
 const axios = require('axios')
 const fs = require('fs')
-const Math = require('mathjs');
 let FormData = require('form-data')
 let fetch = require('node-fetch')
 const afkJs = require('./lib/afk')
@@ -10,6 +9,7 @@ const moment = require('moment-timezone');
 const { mess, menu, ingfo, listCode } = require('./lib/text')
 const { color, getBuffer, convertMp3 } = require('./lib/func')
 function prob (P, x, n, Q) {
+  const Math = require('mathjs');
   const hasil = Math.evaluate(`${n}!/${x}!/${n-x}!*${P}^${x}*${Q}^${n-x}`)
   const txt = `P(X = ${x} = b(${x}, ${n}, ${P} = ${n}*C*${x} ${P}^${x} ${Q}^${n-x}))\n${n}!/${x}!${n-x} (${P})^${x} (${Q})^${n-x} = ${hasil}`
   return txt
