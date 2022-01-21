@@ -9,8 +9,8 @@ const moment = require('moment-timezone');
 const { mess, menu, ingfo, listCode } = require('./lib/text')
 const { color, getBuffer, convertMp3 } = require('./lib/func')
 function prob (P, x, n, Q) {
-  const Math = require('mathjs');
-  const hasil = Math.evaluate(`${n}!/${x}!/${n-x}!*${P}^${x}*${Q}^${n-x}`)
+  const meth = require('mathjs');
+  const hasil = meth.evaluate(`${n}!/${x}!/${n-x}!*${P}^${x}*${Q}^${n-x}`)
   const txt = `P(X = ${x} = b(${x}, ${n}, ${P} = ${n}*C*${x} ${P}^${x} ${Q}^${n-x}))\n${n}!/${x}!${n-x} (${P})^${x} (${Q})^${n-x} = ${hasil}`
   return txt
 }
