@@ -2,7 +2,7 @@ const { GroupSettingChange, WAMessageProto, MessageType, prepareMessageFromConte
 const { exec } = require('child_process');
 const axios = require('axios')
 const fs = require('fs')
-const Math = require('mathjs')
+const Math = require('mathjs');
 let FormData = require('form-data')
 let fetch = require('node-fetch')
 const afkJs = require('./lib/afk')
@@ -10,11 +10,6 @@ const moment = require('moment-timezone');
 const { mess, menu, ingfo, listCode } = require('./lib/text')
 const { color, getBuffer, convertMp3 } = require('./lib/func')
 moment.tz.setDefault('Asia/Jakarta').locale('id');
-function prob (P, x, n, Q) {
-  const hasil = Math.evaluate(`${n}!/${x}!/${n-x}!*${P}^${x}*${Q}^${n-x}`)
-  const txt = `P(X = ${x} = b(${x}, ${n}, ${P} = ${n}*C*${x} ${P}^${x} ${Q}^${n-x}))\n${n}!/${x}!${n-x} (${P})^${x} (${Q})^${n-x} = ${hasil}`
-  return txt
-}
 module.exports = handle = (client, Client) => {
     try {
         /*DOWNLOADER*/
@@ -962,11 +957,6 @@ module.exports = handle = (client, Client) => {
                     const buff = await client.downloadMediaMessage(JSON.parse(JSON.stringify(data.message).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo)
                     Client.sendWebpAsSticker(data.from, buff.toString('base64'), data.message, {pack: `${text[0]}`, author: `${text[1]}`, emojis: data.body.match(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g)})
                     break
-case 'prob':
-if(data.body === "") return data.reply('Kirim perintah !prob P x n Q')
-var angka = data.body.split(' ') 
-Client.sendText(from, prob(angka[0],angka[1], angka[2], angka[3]))
-break
                 case 'stikerfire':
                 case 'stickerfire':
                 case 'sfire':
