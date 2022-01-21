@@ -2,6 +2,7 @@ const { GroupSettingChange, WAMessageProto, MessageType, prepareMessageFromConte
 const { exec } = require('child_process');
 const axios = require('axios')
 const fs = require('fs')
+const math = require('mathjs')
 let FormData = require('form-data')
 let fetch = require('node-fetch')
 const afkJs = require('./lib/afk')
@@ -858,6 +859,20 @@ module.exports = handle = (client, Client) => {
                 t
             } = data
             switch(command.toLowerCase()) {
+case 'prob':
+if(data.body === " ") data.reply("Kirim perintah !prob P x n Q")
+var angka = data.body.split(' ') 
+try { const Math = require('mathjs')
+function prob (P, x, n, Q) {
+  const hasil = Math.evaluate(`${n}!/${x}!/${n-x}!*${P}^${x}*${Q}^${n-x}`)
+  const txt = `P(X = ${x} = b(${x}, ${n}, ${P} = ${n}*C*${x} ${P}^${x} ${Q}^${n-x}))\n${n}!/${x}!${n-x} (${P})^${x} (${Q})^${n-x} = ${hasil}`
+  return txt
+}
+} catch(e){
+Client.sendText(from,e)
+}
+Client.sendText(from, prob(angka[0],angka[1], angka[2], angka[3]))
+break
 				case 'self':
 					if (!isOwner) return data.reply(mess.ownerOnly)
 					if (Client.self) return data.reply('Already Self Mode')
