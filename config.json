@@ -1,13 +1,13 @@
 {	
 	"prefix": "multi", 
 	"defaultSessionName": "bot", 
-	"zeksKey": "3k95xMizHeMDc565zlqM5X6uqTP",
+	"zenzKey": "1f5fe2ce6c7a",
 	"autoRead": true,
 	"self": false, 
 	"maxLimit": 30,
-	"ownerList": ["6282126688740@s.whatsapp.net", "62882009996111@s.whatsapp.net"],
-	"apiUrl": "https://api.zeks.me",
-    "imgUrl": "https://i.postimg.cc/5t5c4rwd/483fd01239cb48c5d997be1cbed9cc9f.jpg",
-	"pack": "AsunaBot",
-	"author": "wa.me/6281283423921"
+	"ownerList": ["6283841403395@s.whatsapp.net"],
+	"apiUrl": "https://zenzapis.xyz",
+    "imgUrl": "https://i.postimg.cc/G3TXSSXB/image.jpg",
+	"pack": "BellBot",
+	"author": "wa.me/6283841403395"
 }
